@@ -11,9 +11,9 @@ You can check it out at <a>https://nurseapplication.herokuapp.com/</a>
     <h4> You can save records for you patients.</h4>
    <p align="center"><img src="gifs/record1.gif"/></p>
     <h4> You can search patients by name. </h4>
-   <p align="center"><img src="gifs/patient.gif"/></p>
-   <h4> As a patient, you can check your data.</h4>
    <p align="center"><img src="gifs/search.gif"/></p>
+   <h4> As a patient, you can check your data.</h4>
+   <p align="center"><img src="gifs/patient.gif"/></p>
 
 
 ## Installation
