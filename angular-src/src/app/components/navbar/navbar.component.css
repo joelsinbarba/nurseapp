@@ -1,0 +1,16 @@
+.bck{
+    background: #212834;
+}
+
+.brnd{
+    font-family: "Roboto";
+    font-weight: 700;
+    color: rgb(216, 216, 216);
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.blck{
+    font-family: "Roboto";
+    color: rgb(194, 194, 194);
+}

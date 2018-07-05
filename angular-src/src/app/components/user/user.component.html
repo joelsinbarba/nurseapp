@@ -1,0 +1,399 @@
+<div class="sidebar">
+
+  <div id="titleBar">
+    <div id="profilePic">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8PDQ8PDQ0SEA8ODRAQDRAOEBAPDw8QGBEWFhgSFhUYHiggGBolGxMVIT0hJSkrMC4uFx8zODMtNygtLisBCgoKDg0NGhAQGC0gHSUrLS8tKy0tLS0tKy0tLS0rLS0tLS0tLS0tLS0rKysrLSsrKy0rLS0tKy0rLSstKzcrK//AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEAAwEBAQEAAAAAAAAAAAAABAUGAQIDB//EADYQAQACAAMDCAoCAQUAAAAAAAABAgMFEQQhMRIiQVFhcZGhEyMyUmJygbHB0TPhQkOCstLw/8QAGAEBAQEBAQAAAAAAAAAAAAAAAAIDAQT/xAAdEQEBAAMBAQEBAQAAAAAAAAAAAQIRMQMhQVES/9oADAMBAAIRAxEAPwD9EAelmAAAAAAAAAAA9YdJtOlYmZ7I1B5EzCyzFt0RX5p3+EJdMmj/ACxJ+ldE3KR3VVAnZhgYWHpWszN+MxPCI7UF2XbgA6AAAAAAAAAAAAAAAAAAAAD7bNs18SdKRujjM7qx9UnL8vnE0tfdTojpt+oXlKRERERpEcIjgzyz1x2RA2fKaV9vnz27qx9E+tIjdERHdGj0M7bV6AHBRZnsVq3tiRvradZ6Zr169ivayYVO35XxthR30/6/ppjn+VNipAapAAAAAAAAAAAAAAAAAAErLtm9JiRE+zXnW6p6oRVxkVebefiiPL+05XUdnVpEOgwWAAAAAApM52bk2jErG606W+bTj4QrWhzakTgX16NJjv1Z5thfiL0AW4AAAAAAAAAAAAAAAALzJI9VPzz9oUa7yOfV2jqv+IRnx2dWQDFYAAAAACLmn8GJ8rOtFmn8GJ8v5Z1r58Rk4A0cAAAAAAAAAAAAAAAAFxkU828fFH2U6+yrZrYdZm0xz9JiI6I0Rnfjs6ngMVgAAAAAImaz6i/dH/KGdaTb8CcTDmtZ0mZjTXhunXSWdvWYmYnjEzEtfPicnkBokAAAAAAAAAAAAAAAAafY7a4VJ66V+zMNBlE+orv4TaPNn6cdx6mgMlgAAAAAEspa0zMzPGZmZ8Wl2u/Jw726qz9mYhp5pyAGqQAAAAAAAAAAAAAAABOynaJrixXXm33THxdEoL1S81tFo41mLR9J1cs3Bqx5w7axExwmImHp52gAAAAACnzvHnWMOJ3TGtu3fujuVSRt+Ny8W8xOsa6V7o3ffVHb4zURQBTgAAAAAAAAAAAAAAAAAC7ybaNaejn2qcO2v/tyyZvLpmMemnXpPdMNIwzmquACXQABFzHafR4czHtTup3pSkzz+SnyTp4qxm65VaA3QAAAAAAAAAAAAAAAAAAAAmZTXXHr2RafL+2hVmVbFNdMSbb7V3VjoidJ4rNhnd1cAEugAClz2OfSfhtHnC6RMw2P0tYiLaTWdY13x3Kxuq5WdAboAAAAAAAAAAAAAAAAAAHa11mKxxtMRHfM6JOz7BiYmkxXk1mfatu8uMrTZMtpSYtPOtHTO6InshFykdkTcOukRHVER5PQMVgAAAAAMzt2Hyca8aaRytY7p3/t8Gj2vYaYu+260RpFo46flU7RlmJTfXnx113T4Nsc4ixCHZ6nFuAAAAAAAAAAAPrs+z3xJ5ldY6Z4Vj6g+T1Sk2nSsTM9URqttmyisb8S3K+GNYjx4yssLCrWNK1iI7IZ3Ofiv8qbAym877zyI6o51v6WWzbDh4e+tdZ963Onz4JQi5Wu6c0dBLoAAAAAAAAAD4bRstMT26xPbwt4q3aMnnjh213+zbdu71yOzKxzTLY2Dak6XrNd/Tw+k9L5tXakTGkxrHVO9A2nKcO3scyezfXwaT0/rlxUYkbTsWJh77V1r71d8R39SOuXaQB0AAAWeTbLypnEtwrOlO/ply3UHvYcq/yxfpT9/pbVrERpEaR2OjC21cgA46AAAAAAAAAAAAAAAAAA5Kv23K621tTm24/DM9vUsR2XQydqzEzFo0mJ0mJ6HF3nOzcqvpIjnU49ter8qRtjdxFmgBTg0mX4XJwqRp0az3zvZ7Bw+VetfetEebUxDL0qsXQGagAAAAAAAAAAAAAAAAAAAAAHLRExMT0xvZbFpybWr7tpjzapQZxh6YuvvVifrwX536nJBAbJTcpprjRPuxM+Wn5aBTZFXnXnqrWPGZ/S5Y59XOACHQAAAAAAAAAAAAAAAAAAAAABVZ7Tm0t1WmPGNfwtVdnc+qj5408JVj1y8UjgNkLbIf8AU/2/ey3Bjn1c4AJdAAAAAAAAAAAAAAAAAAAAAAclU57wp9fsCseuXipAbof/2Q=="
+        alt=":)">
+    </div>
+    <h1 class="nombree"> {{name}}</h1>
+    <div *ngIf="isNurse" class="controls history" (click)="onHistoryClick()">All</div>
+    <div class="controls logout" (click)="onLogoutClick()">Logout</div>
+    <!--span class="controls">Monthly</span-->
+  </div>
+  <br>  <br>
+   <div *ngIf="isNurse"></div>
+  <div *ngIf="isNurse">
+    <h1 class="patTitle">Patients</h1>
+
+    <input type="text" id="sea" class="form-control filter" placeholder="filter (only by last name)" [(ngModel)]="searchTerm"
+      (ngModelChange)="search()">
+    <ul class="menu">
+
+      <li id="patientsList" ng-app="myApp" ng-controller="patCtrl" *ngFor="let patient of filteredItems" (click)="onClickedPatient(patient._id)">{{patient.lastName + " , " + patient.name}} </li>
+      <!--li>Reports <span class="notification">8</span></li-->
+
+    </ul>
+    <button type="button" (click)="onNewPatientClick()" class="btn btn-success">New Patient</button>
+    <!--button class="toggle-overpane">Toggle Overpane</button>
+        <button class="toggle-pane-left">Toggle Slider</button>
+        <button class="toggle-pane-right">Toggle Pane</button-->
+  </div>
+
+  <!--div class="footer-below">
+      <i class="fa fa-code pulse" style="font-size: 20px; color:antiquewhite;"></i>  with
+      <i class="fa fa-heart pulse" style="font-size: 20px;"></i> by
+      <a href="https://www.github.com/joelgimenez" class="bolder">lchzaboy</a>
+    </div-->
+
+
+</div>
+
+
+<div class="main">
+  <div id="wd" *ngIf="patient._id != 'xx'" class="main--content">
+    <h1 class="nombree"> {{patient.name + " " + patient.lastName}}
+    </h1>
+    <h1 class="subss">{{"DOCUMENT NUMBER : " + patient.document}}</h1>
+    <h1 class="subss"> {{patient.age + " years old"}}
+      <i class="fa fa-heart pulse" style="font-size: 20px;"></i>
+      <!--This button is for function that was never implemented-->
+      <!--button type="button" class="btn btn-primary mgtp" (click)="onCheckVitalsClick()"> Check Vitals </button-->
+    </h1>
+    <div class="mainChart">
+      <h2 class="subttl">Progress Chart
+        <br>
+        <br>
+      </h2>
+      <!--div  *ngIf="isLoading" class="charty">
+          <div class="loader"></div>
+      </div-->
+      <div *ngIf="canChart" class="charty">
+        <br>
+        <div *ngIf="isLoading && recordsLenght>=2" class="loader"></div>
+        <canvas width="400" *ngIf="recordsLenght>= 2 " height="200" id="canvas">{{chart}}</canvas>
+      </div>
+      <div>
+        <p class="mgtp" *ngIf="recordsLenght < 2"> The chart is not shown because you need at least 2 records. Click on the "ADD" button below to start saving records.
+        </p>
+        <br>
+        <br>
+      </div>
+      <!--canvas id="salesData"></canvas-->
+      <h2 class="subttl">Records
+        <br>
+        <br>
+        <button *ngIf="isNurse" type="button" class="btn btn-primary" (click)="onAddRecordClick()">
+          <span class="fa fa-plus" aria-hidden="true"></span> ADD</button>
+      </h2>
+
+      <!--div class="clearFix"></div-->
+
+      <!--div id="totalSales">
+                    <div class="col">
+                      <div id="creditSales" class="progressBar"></div>
+                      <h3>$36,059</h3>
+                      <span class="progressTitle">Credit Sales</span>
+                    </div>
+                    <div class="col">
+                      <div id="channelSales" class="progressBar"></div>
+                      <h3>$24,834</h3>
+                      <span class="progressTitle">Channel Sales</span>
+                    </div>
+                    <div class="col">
+                      <div id="directSales" class="progressBar"></div>
+                      <h3>$15,650</h3>
+                      <span class="progressTitle">Direct Sales</span>
+                    </div>
+                  </div-->
+
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>BPM</th>
+          <th>Systolic</th>
+          <th>Diastolic</th>
+        </tr>
+        <p class="mgtp" *ngIf="recordsLenght == 0"> There are no records here yet. Click the "ADD" button to save records. </p>
+        <tr *ngFor="let record of patient.records">
+          <td>{{record.date | date}} </td>
+          <td>{{record.bpm}}</td>
+          <td>{{record.sys}}</td>
+          <td>{{record.dias}}</td>
+          <!--td  *ngIf="isNurse">
+            <button type="button" class="btn btn-warning" (click)="onEditRecordClick()">Edit</button>
+          </td-->
+          <td *ngIf="isNurse">
+            <button type="button" class="btn btn-danger" (click)="onDeleteClick(1,record._id)">Delete</button>
+          </td>
+        </tr>
+
+
+      </table>
+      <div class="more" *ngIf="isNurse">
+        <h2>More</h2>
+
+        <button type="button" class="btn btn-warning" (click)="onEditPatientClick()">
+          <span class="fa fa-trash-o" aria-hidden="true"></span> Edit Patient </button>
+
+        <button type="button" class="btn btn-danger" (click)="onDeleteClick(0,0)">
+          <span class="fa fa-trash-o" aria-hidden="true"></span> Delete Patient</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div *ngIf="patient._id == 'xx'" class="main--content">
+    <h1 class="nombree"> All records
+    </h1>
+    <h1 class="subss">By date</h1>
+    <br>
+    <br>
+    <div class="mainChart">
+      <!--canvas id="salesData"></canvas-->
+
+      <table>
+        <tr>
+          <th>Patient</th>
+          <th>Date</th>
+          <!--th></th-->
+          <!--th>Systolic</th-->
+          <!--th>Diastolic</th-->
+        </tr>
+        <p class="mgtp" *ngIf="historicalLenght <= 0"> There are no records here yet </p>
+        <tr *ngFor="let record of historical">
+          <td>{{record.patientName}}</td>
+          <td>{{record.date | date}}</td>
+          <td> <button type="button" class="btn btn-info" (click)="onClickedPatient(record._id)">Go to {{record.patientName}}</button> </td>
+          <!--td>asd</td-->
+          <!--td  *ngIf="isNurse">
+              <button type="button" class="btn btn-warning" (click)="onEditRecordClick()">Edit</button>
+            </td-->
+          <!--td  *ngIf="isNurse">
+              <button type="button" class="btn btn-danger" (click)="onDeleteClick(1,record._id)">Delete</button>
+            </td-->
+        </tr>
+
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div id="loginScreen" class="overpane ">
+  <!--button class="toggle-overpane big-button"  ng-click="toggle()">Close Overpane</button-->
+
+  <div class="flat-form">
+    <h1>Welcome!</h1>
+    <p class="tooltipp"> Please select your role to gain access</p>
+    <br>
+    <ul class="tab-group">
+      <li>
+        <a href="#login" class="active" (click)="clicked($event)">I'm a nurse</a>
+      </li>
+      <li>
+        <a href="#loginPatient" (click)="clicked($event)">I'm a patient</a>
+      </li>
+      <li>
+        <a href="#newNurse" (click)="clicked($event)">I'm a new nurse</a>
+      </li>
+    </ul>
+    <div id="login" class="form-action show1">
+        <div *ngIf="alreadySentForm" class="loader2"></div>
+      <h1>Login as a Nurse</h1>
+      <!--p>Lor</p-->
+      <form (submit)="onLoginSubmit(this)" class='firstForm'>
+        <input type="text" [(ngModel)]="email" name="email" id="emailLog" class="form-control" placeholder="email" />
+        <input type="password" [(ngModel)]="password" name="passwordLog" id="password" class="form-control" placeholder="password"
+        />
+        <!--input type="submit" value="Login" class="button" /-->
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+    </div>
+    <!--/#login.form-action-->
+    <div id="newNurse" class="form-action hide">
+        <div *ngIf="alreadySentForm" class="loader2"></div>
+      <h1>Create a Nurse account</h1>
+      <p>Create an account to start saving info about your patients :) </p>
+      <form class='firstForm' (submit)="onRegisterSubmit()">
+        <input type="text" [(ngModel)]="name" name="name" id="nameSign" class="form-control" placeholder="name" />
+        <input type="text" [(ngModel)]="email" name="email" id="emailSign" class="form-control" placeholder="email" />
+        <input type="password" [(ngModel)]="password" name="password" id="passwordSign" class="form-control" placeholder="password"
+        />
+        <!--input type="submit" value="Login" class="button" /-->
+        <button type="submit" class="btn btn-success">Create Account</button>
+      </form>
+    </div>
+    <!--/#register.form-action-->
+    <div id="loginPatient" class="form-action hide">
+        <div *ngIf="alreadySentForm" class="loader2"></div>
+      <h1>Login as a Patient</h1>
+      <p>Login with your identity number to see your history and progress.
+        <br> (You must have been previously registered by a nurse)</p>
+      <form class='firstForm' (submit)="onPatLogSubmit()">
+        <input type="text" class="form-control" placeholder="ID Number" [(ngModel)]="logIDnum" name="logIDnum" id="logIDnum" />
+        <!--input type="submit" value="Login" class="button" /-->
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+    </div>
+    <!--/#register.form-action-->
+  </div>
+
+
+</div>
+
+<div id="newpat" class="overpane">
+  <!--button class="toggle-overpane big-button"  ng-click="toggle()">Close Overpane</button-->
+
+  <div class="flat-form">
+    <div id="signup" class="form-action">
+        <div *ngIf="alreadySentForm" class="loader2"></div>
+      <h1>New patient</h1>
+      <p></p>
+      <form (reset)="onNewPatientCancel()" (submit)="onNewPatientSubmit()" class='firstForm'>
+        <input type="number" class="form-control" [(ngModel)]="patId" name="patId" id="patId" placeholder="document number" />
+        <input type="text" class="form-control" [(ngModel)]="patName" name="patName" id="patName" placeholder="first name" />
+        <input type="text" class="form-control" [(ngModel)]="patLastName" name="patLastName" id="patLastName" placeholder="last name"
+        />
+        <input type="number" class="form-control" [(ngModel)]="patAge" name="patAge" id="patAge" placeholder="age" />
+        <!--input type="submit" value="Login" class="button" /-->
+        <div class="sidebyside row">
+          <button type="reset" class="btn btn-danger">Cancel</button>
+          <button type="submit" class="btn btn-success">Save</button>
+        </div>
+      </form>
+    </div>
+    <!--/#register.form-action-->
+  </div>
+
+
+</div>
+
+
+<div id="editpat" class="overpane">
+  <!--button class="toggle-overpane big-button"  ng-click="toggle()">Close Overpane</button-->
+
+  <div class="flat-form">
+    <div id="signup" class="form-action">
+        <div *ngIf="alreadySentForm" class="loader2"></div>
+      <h1>Edit {{patient.name}}'s data</h1>
+      <p></p>
+      <form (reset)="onEditPatientCancel()" (submit)="onEditPatientSubmit()" class='firstForm'>
+        <p class="lilTooltip">Document</p>
+        <input type="number" class="form-control" [(ngModel)]="patId" name="patId" id="patId1" placeholder="document number" />
+        <p class="lilTooltip">First Name</p>
+        <input type="text" class="form-control" [(ngModel)]="patName" name="patName" id="patName1" placeholder="first name" />
+        <p class="lilTooltip">Last Name</p>
+        <input type="text" class="form-control" [(ngModel)]="patLastName" name="patLastName" id="patLastName1" placeholder="last name"
+        />
+        <p class="lilTooltip">Age</p>
+        <input type="number" class="form-control" [(ngModel)]="patAge" name="patAge" id="patAge1" placeholder="age" />
+        <!--input type="submit" value="Login" class="button" /-->
+        <div class="sidebyside row">
+          <button type="reset" class="btn btn-danger">Cancel</button>
+          <button type="submit" class="btn btn-success">Save</button>
+        </div>
+      </form>
+    </div>
+    <!--/#register.form-action-->
+  </div>
+
+
+</div>
+
+<div id="newrec" class="overpane ">
+  <!--button class="toggle-overpane big-button"  ng-click="toggle()">Close Overpane</button-->
+
+  <div class="flat-form">
+    <div id="signup" class="form-action">
+        <div *ngIf="alreadySentForm" class="loader2"></div>
+      <h1>New record</h1>
+      <p></p>
+      <form (reset)="onAddRecordCancel()" (submit)="onAddRecordSubmit()" class='firstForm'>
+        <!--select class="form-control" name="cars">
+              <option value="" disabled selected>Patient</option>
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="fiat">Fiat</option>
+              <option value="audi">Audi</option>
+          </select-->
+        <input type="number" class="form-control" placeholder="BPM" [(ngModel)]="bpmField" name="bpmField" />
+        <input type="number" class="form-control" placeholder="systolic" [(ngModel)]="sysField" name="sysField" />
+        <input type="number" class="form-control" placeholder="diastolic" [(ngModel)]="diasField" name="diasField" />
+        <input type="date" class="form-control" [(ngModel)]="dateField" name="dateField"/>
+        <!--input type="submit" value="Login" class="button" /-->
+        <div class="sidebyside row">
+          <button type="reset" class="btn btn-danger">Cancel</button>
+          <button type="submit" class="btn btn-success">Save</button>
+        </div>
+      </form>
+    </div>
+    <!--/#register.form-action-->
+  </div>
+
+
+</div>
+
+
+<div id="editrec" class="overpane">
+  <!--button class="toggle-overpane big-button"  ng-click="toggle()">Close Overpane</button-->
+
+  <div class="flat-form">
+    <div id="signup" class="form-action">
+        <div *ngIf="alreadySentForm" class="loader2"></div>
+      <h1>Edit record of {{patient.name}}</h1>
+      <p></p>
+      <form (reset)="onEditRecordCancel()" (submit)="onEditRecordSubmit()" class='firstForm'>
+        <input type="number" class="form-control" placeholder="BPM" />
+        <input type="number" class="form-control" placeholder="systolic" />
+        <input type="number" class="form-control" placeholder="diastolic" />
+        <input type="date" class="form-control" />
+        <!--input type="submit" value="Login" class="button" /-->
+        <div class="sidebyside row">
+          <button type="reset" class="btn btn-danger">Cancel</button>
+          <button type="submit" class="btn btn-success">Save</button>
+        </div>
+      </form>
+    </div>
+    <!--/#register.form-action-->
+  </div>
+
+
+</div>
+
+
+<div id="deleteconfirmation" class="overpane">
+  <!--button class="toggle-overpane big-button"  ng-click="toggle()">Close Overpane</button-->
+
+  <div class="flat-form">
+    <div id="signup" class="form-action">
+        <div *ngIf="alreadySentForm" class="loader2"></div>
+      <h1>Are you sure you want to do this?</h1>
+      <form (reset)="onDeleteCancel()" (submit)="onDeleteSubmit()" class='firstForm'>
+        <div class="sidebyside row">
+          <button type="reset" class="btn btn-primary">Go back</button>
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </div>
+      </form>
+    </div>
+    <!--/#register.form-action-->
+  </div>
+
+
+</div>
+
+
+<div id="notifier" class=" ovpBack overpane">
+  <!--button class="toggle-overpane big-button"  ng-click="toggle()">Close Overpane</button-->
+
+  <div class="flat-form">
+    <div id="signup" class="form-action">
+      <h1>{{message2}}</h1>
+      <form class='firstForm'>
+        <div class=" row">
+          <button type="button" (click)="clickedOkay($event)" class="btn btn-warning">Ok</button>
+        </div>
+      </form>
+    </div>
+    <!--/#register.form-action-->
+  </div>
+
+
+</div>
