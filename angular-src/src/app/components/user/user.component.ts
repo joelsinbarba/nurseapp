@@ -38,7 +38,7 @@ export class UserComponent implements OnInit {
   searchTerm = '';
   chart = [];
   isNurse: boolean = true;
-  login: boolean = false;
+  welcome: boolean = false;
   signUp: boolean = false;
   email: "email";
   password: String;
@@ -172,20 +172,19 @@ export class UserComponent implements OnInit {
         if (data.success) {
           //this.flashMessage.show('You are now registered and can now login', {cssClass: 'alert-success', timeout: 3000});
           //this.router.navigate(['/login']);
-        console.log(data.array)
+          this.newclass();
+        //console.log(data.array)
         this.historical = data.array;
         this.historicalLenght = this.historical.length;
         } else {
           
         }
       });
-
-
       //console.log("res1 *** " + profile.user.patients[1].name)
     },
       err => {
+        this.welcome = true;
         //console.log(err);
-        this.newclass();
         return false;
       });
       
@@ -210,7 +209,7 @@ export class UserComponent implements OnInit {
       return e.dias;
     });;
 
-    if (this.patient.records.length > 0) {
+    if ( this.patient.records.length > 0) {
       this.chart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -268,10 +267,6 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
 
-    /*  if(!this.login){
-      $("#loginScreen").add("show");
-     }
-  */
     this.recordsLenght = this.patient.records.length;
     //console.log('ngOninit ran *** ' + this.recordsLenght);
 
@@ -283,7 +278,7 @@ export class UserComponent implements OnInit {
 
   newclass() {
     //console.log("before");
-    $("#loginScreen").addClass("show");
+    $("#loginScreen").removeClass("show");
     //console.log("after");
   }
 
@@ -440,7 +435,7 @@ export class UserComponent implements OnInit {
         age: this.patAge,
         records:this.patient.records
       }
-      console.log("records *** " + this.patient.records);
+     // console.log("records *** " + this.patient.records);
       //console.log("age is " + this.patAge + "last name is " + settings.lastName)
       // Required Fields
       if (!this.validateService.validatePatientEdit(settings)) {
@@ -664,9 +659,9 @@ export class UserComponent implements OnInit {
       cssClass: 'alert-success', timeout: 3000
     });*/
     this.message2 = "Leaving already? See you soon :)";
+    this.welcome = true;
     this.notify();
     // $("#loginScreen").addClass("show");
-    this.login = false;
     //this.router.navigate(['/']);
     //location.reload();
     $("#loginScreen").addClass("show");
@@ -701,7 +696,6 @@ export class UserComponent implements OnInit {
         this.authService.storeUserData(data.token, data.user);
         this.message2 = "Welcome, " + data.user.name ;
         this.notify();
-        this.login = true;
         this.confirmationPendient = true;
         this.isNurse = true;
         $("#loginScreen").removeClass("show");
@@ -733,7 +727,6 @@ export class UserComponent implements OnInit {
 
 
   onPatLogSubmit() {
-    //alert("login");
     const settings = {
       document: this.logIDnum,
     }

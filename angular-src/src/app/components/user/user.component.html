@@ -60,7 +60,9 @@
       <div *ngIf="canChart" class="charty">
         <br>
         <div *ngIf="isLoading && recordsLenght>=2" class="loader"></div>
+        <div *ngIf="patient.records!=null">
         <canvas width="400" *ngIf="recordsLenght>= 2 " height="200" id="canvas">{{chart}}</canvas>
+        </div>
       </div>
       <div>
         <p class="mgtp" *ngIf="recordsLenght < 2"> The chart is not shown because you need at least 2 records. Click on the "ADD" button below to start saving records.
@@ -177,10 +179,10 @@
 </div>
 
 
-<div id="loginScreen" class="overpane ">
+<div id="loginScreen" class="overpane show">
   <!--button class="toggle-overpane big-button"  ng-click="toggle()">Close Overpane</button-->
 
-  <div class="flat-form">
+  <div *ngIf="welcome" class="flat-form">
     <h1>Welcome!</h1>
     <p class="tooltipp"> Please select your role to gain access</p>
     <br>
